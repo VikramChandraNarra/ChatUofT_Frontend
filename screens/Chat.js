@@ -10,21 +10,71 @@ const Chat = () => {
 	const [visible, setVisible] = useState(false);
 	const [rooms, setRooms] = useState([]);
 
-	useLayoutEffect(() => {
-		function fetchGroups() {
-			fetch("http://localhost:4000/api")
-				.then((res) => res.json())
-				.then((data) => setRooms(data))
-				.catch((err) => console.error(err));
-		}
-		fetchGroups();
-	}, []);
+	// useLayoutEffect(() => {
+	// 	function fetchGroups() {
+	// 		fetch("http://localhost:4000/api")
+	// 			.then((res) => res.json())
+	// 			.then((data) => setRooms(data))
+	// 			.catch((err) => console.error(err));
+	// 	}
+	// 	fetchGroups();
+	// }, []);
+
+	// const getUsername = async () => {
+	// 	try {
+	// 		return value
+	// 	} catch (e) {
+	// 		console.error("Error while loading username!");
+	// 	}
+	// };
+
 
 	useEffect(() => {
-		socket.on("roomsList", (rooms) => {
-			setRooms(rooms);
-		});
-	}, [socket]);
+		// value = getUsername()
+		alert("hello")
+
+		fetch("http://localhost:4000/fetchMockChat", {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			// body: JSON.stringify({
+			// 	userId: "newid",
+			// })
+		})
+			.then(res => res.json()).then(
+				data => {
+					console.log(data)
+					setRooms(data)
+
+					alert("brother")
+				}
+			)
+			.catch(error => {
+				console.error('Error:', error);
+			});
+		// data.result.courses.map((dat) => {
+		// 	fetch("http://localhost:4000/fetchschema", {
+		// 		method: 'POST',
+		// 		headers: {
+		// 			'Content-Type': 'application/json'
+		// 		},
+		// 		body: JSON.stringify({
+		// 			userId: dat,
+		// 		})
+		// 	})
+		// 		.then(res => res.json()).then(
+		// 			data => {
+		// 				console.log(data.result.courses)
+		// 				setRooms(data.result.courses)
+		// 			}
+		// 		)
+		// 		.catch(error => {
+		// 			console.error('Error:', error);
+		// 		});
+		// })
+
+	}, []);
 
 	const handleCreateGroup = () => setVisible(true);
 
@@ -44,7 +94,7 @@ const Chat = () => {
 					<FlatList
 						data={rooms}
 						renderItem={({ item }) => <ChatComponent item={item} />}
-						keyExtractor={(item) => item.id}
+						// keyExtractor={(item) => item.id}
 					/>
 				) : (
 					<View style={styles.chatemptyContainer}>
