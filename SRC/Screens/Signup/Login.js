@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Image } from 'react-native'
 import React, { useState } from 'react'
 
 import { containerFull, goback, hr80 } from '../../CommonCss/pagecss'
@@ -6,6 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 import { formHead, formInputm, formbtn, formInput, formTextLinkRight, formTextLinkCenter } from '../../CommonCss/formcss';
 
+import UofT from '../../../assets/uoft.png';
 
 const loginPressed = ( email, password, navigation) => {
     //
@@ -43,6 +44,10 @@ const Login = ({ navigation }) => {
     const [password, setPassword] = useState('');
   return (
     <View style={containerFull}>
+        <Image
+            style={styles.image}
+            source={UofT}
+        />
        
        <Text style={formHead}>Login</Text>
             <TextInput placeholder="Enter Your Email" style={formInput}
@@ -76,4 +81,10 @@ const Login = ({ navigation }) => {
 
 export default Login
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    image: {
+        height: 400,
+        width: 400,
+
+    }
+})

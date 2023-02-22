@@ -2,6 +2,7 @@ import { StyleSheet, View, Text, TouchableOpacity, Image, TextInput } from 'reac
 import React, { useState } from 'react'
 import { containerFull, goback } from '../../CommonCss/pagecss'
 import { MaterialIcons } from '@expo/vector-icons';
+import UofT from '../../../assets/uoft.png';
 
 import { formHead, formbtn, formInput } from '../../CommonCss/formcss';
 
@@ -54,6 +55,11 @@ const Signup_EnterEmail = ({navigation}) => {
     const [utorId, setUtorId] = useState('');
   return (
     <View style={containerFull}>
+        <Image
+            style={styles.image}
+            source={UofT}
+        />
+       
         <TouchableOpacity onPress={() => navigation.navigate('Login')} style={goback}>
 
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
@@ -88,4 +94,10 @@ const Signup_EnterEmail = ({navigation}) => {
 
 export default Signup_EnterEmail
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    image: {
+        height: 400,
+        width: 400,
+
+    }
+})
