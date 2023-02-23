@@ -1,16 +1,18 @@
-import { StyleSheet, Text, View, TextInput, Image } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native'
+// import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 import React, { useState } from 'react'
 
 import { containerFull, goback, hr80 } from '../../CommonCss/pagecss'
 import { MaterialIcons } from '@expo/vector-icons';
 
-import { formHead, formInputm, formbtn, formInput, formTextLinkRight, formTextLinkCenter } from '../../CommonCss/formcss';
+import { formHead, formInputm, formbtn, formInput, formTextLinkRight, formTextLinkCenter, formbtnSignup, formbtnSignupText, formbtnLoginText, formInputB } from '../../CommonCss/formcss';
 
 import UofT from '../../../assets/uoft.png';
 
 const loginPressed = ( email, password, navigation) => {
     //
-    fetch("http://localhost:4000/login", {
+    fetch("http://localhost:8000/login", {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -43,38 +45,32 @@ const Login = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   return (
+
     <View style={containerFull}>
         <Image
             style={styles.image}
             source={UofT}
         />
        
-       <Text style={formHead}>Login</Text>
-            <TextInput placeholder="Enter Your Email" style={formInput}
+        <TextInput placeholder="Enter Your Email" style={formInput}
                 onChangeText={(text) => setEmail(text)}
             />
-            <TextInput placeholder="Enter Your Password" style={formInput}
+        <TextInput placeholder="Enter Your Password" style={formInput}
                 secureTextEntry={true}
                 onChangeText={(text) => setPassword(text)}
-            />
+        />
             
-
-
-
-        <Text style={formbtn} onPress={() => loginPressed(email, password, navigation)}
-        >
-            Submit!
-        </Text>
-        
-
-        <View style={hr80}></View>
-
-
-            <Text style={formTextLinkCenter}>New to ChatUofT? 
-            <Text style={{ color: 'black' }} onPress={() => navigation.navigate("Signup_EnterEmail")}>Sign up</Text>
+        <TouchableOpacity style={formbtn}>
+            <Text style={formbtnLoginText} onPress={() => loginPressed(email, password, navigation)}>
+            Log in
             </Text>
+        </TouchableOpacity>
+        <View style={hr80}></View>
+        
+        <TouchableOpacity style={formbtnSignup}> 
+            <Text style={formbtnSignupText} onPress={() => navigation.navigate("Signup_EnterEmail")}>Sign up</Text>
+        </TouchableOpacity>
 
-      
     </View>
   )
 }
@@ -83,8 +79,9 @@ export default Login
 
 const styles = StyleSheet.create({
     image: {
-        height: 400,
-        width: 400,
+        marginTop: 130,
+        height: 270,
+        width: 270,
 
     }
 })

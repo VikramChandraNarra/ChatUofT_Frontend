@@ -4,7 +4,7 @@ module.exports = {
         height: '100%', 
         backgroundColor: '#E5E5E5', 
         alignItems: 'center', 
-        justifyContent: 'center'
+        // justifyContent: 'center'
     },
     
     logo1: {

@@ -1,13 +1,6 @@
 import React, { useState, useLayoutEffect } from "react";
-import {
-	Text,
-	SafeAreaView,
-	View,
-	TextInput,
-	Pressable,
-	Alert,
-} from "react-native";
-import { styles } from "../utils/styles";
+import {Text, SafeAreaView, View, TextInput, Pressable, Alert} from "react-native";
+import {styles} from "../utils/styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Login = ({ navigation }) => {
@@ -56,7 +49,6 @@ const Login = ({ navigation }) => {
 						onChangeText={(value) => setUsername(value)}
 					/>
 				</View>
-
 				<Pressable onPress={handleSignIn} style={styles.loginbutton}>
 					<View>
 						<Text style={styles.loginbuttonText}>Get Started</Text>
@@ -69,15 +61,3 @@ const Login = ({ navigation }) => {
 
 export default Login;
 
-// import { View, Text, SafeAreaView } from "react-native";
-// import React from "react";
-
-// const Login = () => {
-// 	return (
-// 		<SafeAreaView>
-// 			<Text>Hello World</Text>
-// 		</SafeAreaView>
-// 	);
-// };
-
-// export default Login;
