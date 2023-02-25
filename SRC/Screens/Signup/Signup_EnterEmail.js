@@ -4,7 +4,7 @@ import { containerFull, goback } from '../../CommonCss/pagecss'
 import { MaterialIcons } from '@expo/vector-icons';
 import UofT from '../../../assets/uoft.png';
 
-import { formHead, formbtn, formInput } from '../../CommonCss/formcss';
+import { formHead, formbtn, formInput, formbtnLoginText } from '../../CommonCss/formcss';
 
 const storeUsername = async (username, navigation) => {
     try {
@@ -72,7 +72,6 @@ const Signup_EnterEmail = ({navigation}) => {
 
         </TouchableOpacity>
 
-        <Text style={formHead}>Create a new account</Text>
         <TextInput placeholder="Enter Your Email" 
         style={formInput} onChangeText={(text) => setEmail(text)}/>
         <TextInput placeholder="Enter Your UTORid" 
@@ -81,11 +80,13 @@ const Signup_EnterEmail = ({navigation}) => {
         style={formInput} onChangeText={(text) => setPassword(text)}/>
 
 
-        <Text style={formbtn}
-            onPress={() => signupProcess(email, password, utorId, navigation)}
-        >
+        <TouchableOpacity style={formbtn}>
+        <Text style={formbtnLoginText}
+            onPress={() => signupProcess(email, password, utorId, navigation)}>
             Sign up!
         </Text>
+        </TouchableOpacity>
+        
         
       
     </View>
@@ -96,8 +97,9 @@ export default Signup_EnterEmail
 
 const styles = StyleSheet.create({
     image: {
-        height: 400,
-        width: 400,
+        marginTop: 130,
+        height: 270,
+        width: 270,
 
     }
 })
