@@ -60,16 +60,8 @@ const Signup_EnterEmail = ({navigation}) => {
             source={UofT}
         />
        
-        <TouchableOpacity onPress={() => navigation.navigate('Login')} style={goback}>
-
+        <TouchableOpacity onPress={() => navigation.navigate('Welcome')} style={goback}>
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
-            <Text style={{
-                color: 'black',
-                fontSize: 16,
-            }}
-
-            >Go Back</Text>
-
         </TouchableOpacity>
 
         <TextInput placeholder="Enter Your Email" 
