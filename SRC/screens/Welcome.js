@@ -1,7 +1,7 @@
 import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { containerFull } from '../SRC/CommonCss/pagecss'
-import{formbtn, formbtnSignup, formbtnLoginText, formbtnSignupText} from '../SRC/CommonCss/formcss'
+import { containerFull } from '../CommonCss/pagecss'
+import{formbtn, formbtnSignup, formbtnLoginText, formbtnSignupText} from '../CommonCss/formcss'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 
@@ -18,7 +18,7 @@ const Welcome = ({navigation}) => {
             </TouchableOpacity>
         
             <TouchableOpacity style={formbtnSignup}> 
-            <Text style={formbtnSignupText} onPress={() => navigation.navigate("Signup_EnterEmail")} >Sign up</Text>
+            <Text style={formbtnSignupText} onPress={() => navigation.navigate("Signup")} >Sign up</Text>
             </TouchableOpacity>
     </SafeAreaView>
     

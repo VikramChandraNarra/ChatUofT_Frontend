@@ -13,7 +13,7 @@ module.exports = {
     }, 
 
     hr80: {
-        width: '80%', 
+        width: '75%', 
         height: 1, 
         backgroundColor: 'grey',
         marginVertical: 10
