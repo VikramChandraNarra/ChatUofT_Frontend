@@ -4,7 +4,6 @@ module.exports = {
         height: '100%', 
         backgroundColor: '#E5E5E5', 
         alignItems: 'center', 
-        // justifyContent: 'center'
     },
     
     logo1: {
@@ -14,7 +13,7 @@ module.exports = {
     }, 
 
     hr80: {
-        width: '80%', 
+        width: '75%', 
         height: 1, 
         backgroundColor: 'grey',
         marginVertical: 10
