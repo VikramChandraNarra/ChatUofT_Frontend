@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 const MainTabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Chats"
+      initialRouteName="Status"
       screenOptions={{
         tabBarStyle: { backgroundColor: 'whitesmoke' },
         headerStyle: { backgroundColor: 'whitesmoke' },
@@ -24,8 +24,8 @@ const MainTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Calls"
-        component={NotImplementedScreen}
+        name="Profile"
+        component={Profile}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="call-outline" size={size} color={color} />
@@ -33,7 +33,7 @@ const MainTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Camera"
+        name="People"
         component={NotImplementedScreen}
         options={{
           tabBarIcon: ({ color, size }) => (

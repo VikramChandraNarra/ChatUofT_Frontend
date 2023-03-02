@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 import { containerFull, goback } from '../CommonCss/pagecss'
 import { MaterialIcons } from '@expo/vector-icons';
 import UofT from '../../assets/uoft.png';
-
-import { formHead, formbtn, formInput, formbtnLoginText } from '../CommonCss/formcss';
+import { formHead, formbtn, formInput, formbtnLoginText, formbtnSignup } from '../CommonCss/formcss';
 
 const storeUsername = async (username, navigation) => {
     try {
@@ -60,9 +59,9 @@ const Signup_EnterEmail = ({navigation}) => {
             source={UofT}
         />
        
-        {/* <TouchableOpacity onPress={() => navigation.navigate('Welcome')} style={goback}>
+        <TouchableOpacity onPress={() => navigation.navigate('Welcome')} style={goback}>
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
-        </TouchableOpacity> */}
+        </TouchableOpacity>
 
         <TextInput placeholder="Enter Your Email" 
         style={formInput} onChangeText={(text) => setEmail(text)}/>
@@ -71,13 +70,19 @@ const Signup_EnterEmail = ({navigation}) => {
         <TextInput placeholder="Enter Your Password" 
         style={formInput} onChangeText={(text) => setPassword(text)}/>
 
-
         <TouchableOpacity style={formbtn}>
+            <Text style={formbtnLoginText}
+                onPress={() => navigation.navigate('Home')}>
+                Sign up!
+            </Text>
+        </TouchableOpacity>
+
+        {/* <TouchableOpacity style={formbtn}>
         <Text style={formbtnLoginText}
             onPress={() => signupProcess(email, password, utorId, navigation)}>
             Sign up!
         </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
     </View>
   )
 }

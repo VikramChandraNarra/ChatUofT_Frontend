@@ -53,9 +53,9 @@ const Login = ({ navigation }) => {
         />
 
         
-        {/* <TouchableOpacity onPress={() => navigation.navigate('Welcome')} style={goback}>
+        <TouchableOpacity onPress={() => navigation.navigate('Welcome')} style={goback}>
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
-        </TouchableOpacity> */}
+        </TouchableOpacity>
        
         <TextInput placeholder="Enter Your Email" style={formInput}
                 onChangeText={(text) => setEmail(text)}
